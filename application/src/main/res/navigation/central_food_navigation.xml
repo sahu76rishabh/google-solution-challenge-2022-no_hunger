@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/central_food_navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="br.com.fomezero.centralfood.presentation.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_merchantFragment"
+            app:destination="@id/merchantFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_to_ngoFragment"
+            app:destination="@id/ngoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="br.com.fomezero.centralfood.presentation.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_merchantFragment"
+            app:destination="@id/merchantFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_ngoFragment"
+            app:destination="@id/ngoFragment" />
+        <action
+            android:id="@+id/welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/merchantFragment"
+        android:name="br.com.fomezero.centralfood.presentation.merchant.MerchantFragment"
+        android:label="merchant_fragment"
+        tools:layout="@layout/merchant_fragment" />
+    <fragment android:id="@+id/ngoFragment" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="br.com.fomezero.centralfood.presentation.signup.WelcomeFragment"
+        android:label="welcome_fragment"
+        tools:layout="@layout/welcome_fragment" >
+        <action
+            android:id="@+id/merchantSignUpFragment"
+            app:destination="@id/merchantSignUpFragment" />
+        <action
+            android:id="@+id/ngoSignUpFragment"
+            app:destination="@id/ngoSignUpFragment" />
+    </fragment>
+    <fragment android:id="@+id/merchantSignUpFragment" />
+    <fragment android:id="@+id/ngoSignUpFragment" />
+</navigation>
